@@ -5,14 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KELDARMERE | The Six Kingdoms MMORPG</title>
     <style>
-        /* Fantasy & Tactical Color Palette */
         :root {
             --gold: #d4af37;
             --deep-blue: #0a192f;
             --stone: #2c3e50;
             --parchment: #f4e7d3;
             --accent: #e67e22;
-            --orc-red: #8b0000;
         }
 
         body {
@@ -26,7 +24,6 @@
         /* Hero Section */
         .hero {
             height: 65vh;
-            /* Placeholder image */
             background: linear-gradient(rgba(0,0,0,0.7), rgba(10,25,47,1)), 
                         url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&q=80&w=2000');
             background-size: cover;
@@ -56,22 +53,30 @@
             margin-top: 10px;
         }
 
-        /* Content Sections */
         .container {
             max-width: 1100px;
             margin: auto;
             padding: 60px 20px;
         }
 
-        .intro-text {
+        .section-box {
             text-align: center;
-            margin-bottom: 50px;
-            max-width: 800px;
+            margin-bottom: 60px;
+            max-width: 900px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        /* The Six Kingdoms Grid */
+        h2 {
+            color: var(--gold);
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--gold);
+            display: inline-block;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+
+        /* Six Kingdoms Grid */
         .hexagon-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -84,27 +89,24 @@
             border: 1px solid var(--gold);
             padding: 30px;
             text-align: center;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transition: all 0.4s ease;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
         }
 
         .race-card:hover {
-            transform: scale(1.03);
+            transform: translateY(-5px);
             background: var(--stone);
             border-color: var(--accent);
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
         }
 
-        .race-card h3 {
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 0;
-            border-bottom: 1px solid rgba(214, 175, 55, 0.3);
-            padding-bottom: 10px;
+        /* Campaign Feature Box */
+        .campaign-box {
+            background: linear-gradient(45deg, rgba(139, 0, 0, 0.2), rgba(10, 25, 47, 0.9));
+            border: 2px solid var(--accent);
+            padding: 40px;
+            margin-top: 60px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(230, 126, 34, 0.2);
         }
 
         /* Roadmap Section */
@@ -113,15 +115,7 @@
             color: var(--deep-blue);
             padding: 45px;
             border-left: 10px solid var(--gold);
-            margin-top: 80px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        }
-
-        .roadmap h2 {
-            margin-top: 0;
-            text-transform: uppercase;
-            border-bottom: 2px solid var(--deep-blue);
-            display: inline-block;
+            margin: 80px 0;
         }
 
         .roadmap ul {
@@ -134,16 +128,13 @@
             border-bottom: 1px solid rgba(10, 25, 47, 0.1);
         }
 
-        .roadmap li strong {
-            color: var(--stone);
-        }
-
-        /* Footer & Links */
+        /* Footer */
         .footer {
             text-align: center;
             padding: 60px 20px;
+            background: rgba(0,0,0,0.6);
+            border-top: 2px solid var(--gold);
             font-size: 0.9rem;
-            background: rgba(0,0,0,0.3);
         }
 
         .btn {
@@ -155,14 +146,13 @@
             text-decoration: none;
             font-weight: bold;
             text-transform: uppercase;
-            border-radius: 2px;
             letter-spacing: 1px;
             transition: 0.3s;
         }
 
         .btn:hover {
             background: var(--parchment);
-            transform: translateY(-2px);
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -175,53 +165,65 @@
     </div>
 
     <div class="container">
-        <div class="intro-text">
-            <h2>The Alliance of Six</h2>
-            <p>At the center of the known world lies a wound in reality a Great Pit. To contain the nightmare within, six disparate races have forged an eternal pact. Surrounding the abyss stands the Hexagonal Citadel, where six mighty towers guard the perimeter of the world's most dangerous dungeon.</p>
+        
+        <div class="section-box">
+            <h2>The Great Containment</h2>
+            <p>The Pit at the heart of Keldarmere was not born of nature, but of <strong>Ancient War</strong>. Decades of devastating magical conflict between the six races scarred the earth, opening a rift fueled by the very spells used to destroy one another. Now, that lingering evil magic has manifest into a living, shifting dungeon.</p>
+            <p>The <strong>Center Keep</strong> and its six mighty towers stand as the only barrier keeping that darkness from swallowing the world. While the fires of war still burn across the outer realms, the races maintain a cold, forced truce here—because if the Keep falls, everything falls.</p>
         </div>
 
         <div class="hexagon-grid">
             <div class="race-card">
                 <h3>Dwarven Foundation</h3>
-                <p>Architects of the deep bedrock. Their tower anchors the heavy iron defenses of the southern perimeter.</p>
+                <p>Architects of the bedrock. Their tower anchors the heavy iron defenses of the southern perimeter.</p>
             </div>
             <div class="race-card">
                 <h3>Elven Spires</h3>
-                <p>Keepers of the ancient mana-glow. Their tower serves as the primary conduit for the city's magical shields.</p>
+                <p>Keepers of the mana-glow. Their tower serves as the primary conduit for the city's magical shields.</p>
             </div>
             <div class="race-card">
                 <h3>Human Markets</h3>
-                <p>The masters of logistics and diplomatic trade. Their sector ensures the alliance remains supplied for the long siege.</p>
+                <p>The masters of logistics. Their sector ensures the alliance remains supplied during the eternal siege.</p>
             </div>
-            
             <div class="race-card">
                 <h3>Gnomish Technocracy</h3>
-                <p>Engineers of steam and gear. Their tower houses the clockwork mechanisms that operate the Great Gates.</p>
+                <p>Engineers of gear and steam. Their tower houses the mechanisms that operate the Great Gates.</p>
             </div>
             <div class="race-card">
                 <h3>Goblin Scrappers</h3>
-                <p>Salvage experts who turn dungeon artifacts into volatile weaponry. Their sector is a forge of constant invention.</p>
+                <p>Salvage experts who turn dungeon artifacts into volatile weaponry and rapid inventions.</p>
             </div>
             <div class="race-card">
                 <h3>Orcish Wardens</h3>
-                <p>Frontline veterans of the Abyss. Their tower acts as the central barracks for the warriors who walk the Pit's edge.</p>
+                <p>Frontline veterans of the Abyss. Their tower acts as the primary barracks for the warriors of the edge.</p>
             </div>
+        </div>
+
+        <div class="section-box" style="margin-top: 80px;">
+            <h2>Beyond the Walls</h2>
+            <p>Surrounding the fortress walls lies the <strong>Perimeter Town</strong>, a bustling hub for those who profit from the dungeon's riches. Beyond the town's safety lies the true world of Keldarmere—a landscape of "untouchable" wilderness and warring territories waiting to be explored.</p>
+        </div>
+
+        <div class="campaign-box">
+            <h3>Multi-Campaign Integration</h3>
+            <p>Keldarmere features a persistent world with multiple active warfronts. Log into specific <strong>Campaigns</strong> with your characters to join localized battles, explore unique ruins, and change the tide of the ongoing war between the races.</p>
         </div>
 
         <div class="roadmap">
             <h2>Chronicles of Development</h2>
             <ul>
-                <li><strong>Phase 1:</strong> Hexagonal World Topology & Foundation (Verified)</li>
-                <li><strong>Phase 2:</strong> Deployment of the Six Stronghold Mesh Units (In Progress)</li>
-                <li><strong>Phase 3:</strong> Connecting the Perimeter Wall Network (Staging)</li>
-                <li><strong>Phase 4:</strong> Sub-Level Dungeon Excavation & Monster Logic</li>
+                <li><strong>Phase 1:</strong> Hexagonal World Topology & Tower Placement (Verified)</li>
+                <li><strong>Phase 2:</strong> Connecting the Perimeter Wall Network (Next Step)</li>
+                <li><strong>Phase 3:</strong> Outer Rim Town & Landscape Sculpting</li>
+                <li><strong>Phase 4:</strong> Sub-Level Dungeon Logic & Evil Magic Systems</li>
             </ul>
         </div>
+
     </div>
 
     <div class="footer">
         <p>PROJECT: KELDARMERE | LEAD ARCHITECT: MARCUS_L33_BEACH</p>
-        <p>&copy; 2026 | Built with Unreal Engine 5.6.1</p>
+        <p>&copy; 2026 | Powered by Unreal Engine 5.6.1</p>
     </div>
 
 </body>
